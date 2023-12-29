@@ -1,6 +1,6 @@
 <?php
 
-namespace Test\Model;
+namespace Test\Unit\Model;
 
 use Nuonic\OnePasswordCli\Model\OnePasswordVaultId;
 use PHPUnit\Framework\TestCase;
