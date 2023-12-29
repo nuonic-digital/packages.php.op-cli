@@ -62,6 +62,9 @@ jobs:
       - name: Extract build archive
         run: tar -xvf /tmp/github-actions/build.tar ./
 
+      - name: Install 1Password CLI
+        uses: 1password/install-cli-action@v1
+
       - name: PHP Unit tests
         uses: php-actions/phpunit@v3
         env:
