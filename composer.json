@@ -1,0 +1,40 @@
+{
+    "name": "nuonic/op-cli",
+    "description": "1Password CLI adapter",
+    "type": "library",
+    "license": "UNLICENSED",
+    "autoload": {
+        "psr-4": {
+            "Nuonic\\OnePasswordCli\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alex Jank",
+            "email": "alex@nuonic.de"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.2",
+        "ramsey/collection": "^2.0",
+        "symfony/config": "^7.0 | ^6.4",
+        "symfony/dependency-injection": "^7.0 | ^6.4",
+        "symfony/http-kernel": "^7.0 | ^6.4",
+        "symfony/process": "^7.0 | ^6.4",
+        "symfony/serializer": "^7.0 | ^6.4"
+    },
+    "require-dev": {
+        "brianium/paratest": "^6.11",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^9.6.15"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

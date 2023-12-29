@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="nuonic.one_password_cli.serializer.normalizer.date_time_normalizer" class="Symfony\Component\Serializer\Normalizer\DateTimeNormalizer" />
+        <service id="nuonic.one_password_cli.serializer.normalizer.date_time_zone_normalizer" class="Symfony\Component\Serializer\Normalizer\DateTimeZoneNormalizer" />
+        <service id="nuonic.one_password_cli.serializer.encoder.json_encoder" class="Symfony\Component\Serializer\Encoder\JsonEncoder" />
+
+        <service id="nuonic.one_password_cli.serializer.denormalizer.array" class="Symfony\Component\Serializer\Normalizer\ArrayDenormalizer"/>
+
+        <service id="nuonic.one_password_cli.serializer.model_denormalizer" class="\Nuonic\OnePasswordCli\Serializer\ModelDenormalizer"/>
+        <service id="nuonic.one_password_cli.serializer.collection_denormalizer" class="\Nuonic\OnePasswordCli\Serializer\CollectionDenormalizer"/>
+
+        <service id="nuonic.one_password_cli.serializer" class="Symfony\Component\Serializer\Serializer">
+            <argument type="collection">
+                <argument type="service" id="nuonic.one_password_cli.serializer.normalizer.date_time_normalizer" />
+                <argument type="service" id="nuonic.one_password_cli.serializer.normalizer.date_time_zone_normalizer" />
+                <argument type="service" id="nuonic.one_password_cli.serializer.model_denormalizer" />
+                <argument type="service" id="nuonic.one_password_cli.serializer.collection_denormalizer" />
+                <argument type="service" id="nuonic.one_password_cli.serializer.denormalizer.array" />
+            </argument>
+            <argument type="collection">
+                <argument type="service" id="nuonic.one_password_cli.serializer.encoder.json_encoder" />
+            </argument>
+        </service>
+
+        <service id="nuonic.one_password_cli.command.common.command_helper" class="Nuonic\OnePasswordCli\Command\Common\CommandHelper" />
+
+        <service id="nuonic.one_password_cli.command.get_item_command" class="Nuonic\OnePasswordCli\Command\GetItemCommand">
+            <argument type="service" id="nuonic.one_password_cli.serializer" />
+            <argument type="service" id="nuonic.one_password_cli.command.common.command_helper" />
+        </service>
+
+        <service id="nuonic.one_password_cli.command.list_items_command" class="Nuonic\OnePasswordCli\Command\ListItemsCommand">
+            <argument type="service" id="nuonic.one_password_cli.serializer" />
+            <argument type="service" id="nuonic.one_password_cli.command.common.command_helper" />
+        </service>
+
+        <service id="nuonic.one_password_cli.command.sign_in_command" class="Nuonic\OnePasswordCli\Command\SignInCommand">
+            <argument type="service" id="nuonic.one_password_cli.command.common.command_helper" />
+        </service>
+    </services>
+</container>
