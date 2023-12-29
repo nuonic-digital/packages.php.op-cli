@@ -2,7 +2,7 @@
     "name": "nuonic/op-cli",
     "description": "1Password CLI adapter",
     "type": "library",
-    "license": "UNLICENSED",
+    "license": "GPL-3.0-or-later",
     "autoload": {
         "psr-4": {
             "Nuonic\\OnePasswordCli\\": "src/"
