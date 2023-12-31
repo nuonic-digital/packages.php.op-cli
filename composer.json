@@ -1,7 +1,7 @@
 {
     "name": "nuonic/op-cli",
     "description": "1Password CLI adapter",
-    "type": "library",
+    "type": "symfony-bundle",
     "license": "GPL-3.0-or-later",
     "autoload": {
         "psr-4": {
