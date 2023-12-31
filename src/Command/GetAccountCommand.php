@@ -19,6 +19,12 @@ class GetAccountCommand
         '--format' => 'json'
     ];
 
+    /**
+     * @param SerializerInterface $serializer
+     * @param CommandHelper $commandHelper
+     *
+     * @internal use GetAccountCommandFactory for instantiation as this object holds state!
+     */
     public function __construct(
         private readonly SerializerInterface $serializer,
         private readonly CommandHelper $commandHelper

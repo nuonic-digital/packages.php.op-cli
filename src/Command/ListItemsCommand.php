@@ -22,6 +22,12 @@ class ListItemsCommand
         '--format' => 'json'
     ];
 
+    /**
+     * @param SerializerInterface $serializer
+     * @param CommandHelper $commandHelper
+     *
+     * @internal use ListItemsCommandCommandFactory for instantiation as this object holds state!
+     */
     public function __construct(
         private readonly SerializerInterface $serializer,
         private readonly CommandHelper $commandHelper

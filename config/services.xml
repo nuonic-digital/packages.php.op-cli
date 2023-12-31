@@ -29,17 +29,46 @@
 
         <service id="nuonic.one_password_cli.command.common.command_helper" class="Nuonic\OnePasswordCli\Command\Common\CommandHelper" />
 
-        <service id="nuonic.one_password_cli.command.get_item_command" class="Nuonic\OnePasswordCli\Command\GetItemCommand">
+        <service
+            id="nuonic.one_password_cli.command.factory.get_item_command_factory"
+            class="Nuonic\OnePasswordCli\Command\Factory\GetItemCommandFactory"
+            public="true"
+        >
             <argument type="service" id="nuonic.one_password_cli.serializer" />
             <argument type="service" id="nuonic.one_password_cli.command.common.command_helper" />
         </service>
 
-        <service id="nuonic.one_password_cli.command.list_items_command" class="Nuonic\OnePasswordCli\Command\ListItemsCommand">
+        <service
+            id="nuonic.one_password_cli.command.factory.list_items_command_factory"
+            class="Nuonic\OnePasswordCli\Command\Factory\ListItemsCommandFactory"
+            public="true"
+        >
             <argument type="service" id="nuonic.one_password_cli.serializer" />
             <argument type="service" id="nuonic.one_password_cli.command.common.command_helper" />
         </service>
 
-        <service id="nuonic.one_password_cli.command.sign_in_command" class="Nuonic\OnePasswordCli\Command\SignInCommand">
+        <service
+            id="nuonic.one_password_cli.command.factory.get_account_command_factory"
+            class="Nuonic\OnePasswordCli\Command\Factory\GetAccountCommandFactory"
+            public="true"
+        >
+            <argument type="service" id="nuonic.one_password_cli.serializer" />
+            <argument type="service" id="nuonic.one_password_cli.command.common.command_helper" />
+        </service>
+
+        <service
+            id="nuonic.one_password_cli.command.read_command"
+            class="Nuonic\OnePasswordCli\Command\ReadCommand"
+            public="true"
+        >
+            <argument type="service" id="nuonic.one_password_cli.command.common.command_helper" />
+        </service>
+
+        <service
+            id="nuonic.one_password_cli.command.sign_in_command"
+            class="Nuonic\OnePasswordCli\Command\SignInCommand"
+            public="true"
+        >
             <argument type="service" id="nuonic.one_password_cli.command.common.command_helper" />
         </service>
     </services>
