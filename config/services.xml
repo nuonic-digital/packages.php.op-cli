@@ -71,5 +71,16 @@
         >
             <argument type="service" id="nuonic.one_password_cli.command.common.command_helper" />
         </service>
+
+        <service
+            id="nuonic.one_password_cli"
+            class="Nuonic\OnePasswordCli\OnePasswordCli"
+        >
+            <argument type="service" id="nuonic.one_password_cli.command.factory.get_account_command_factory" />
+            <argument type="service" id="nuonic.one_password_cli.command.factory.get_item_command_factory" />
+            <argument type="service" id="nuonic.one_password_cli.command.factory.list_items_command_factory" />
+            <argument type="service" id="nuonic.one_password_cli.command.read_command" />
+            <argument type="service" id="nuonic.one_password_cli.command.sign_in_command" />
+        </service>
     </services>
 </container>
